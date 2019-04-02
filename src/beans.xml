@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="userDao" class="com.sun.dao.UserDao">
+    </bean>
+    <bean id="userBiz" class="com.sun.biz.UserBiz">
+        <property id="userDao" ref="userDao"/>
+    </bean>
+    <bean id="userService" class="com.sun.service.UserService">
+        <property id="userBiz" ref="userBiz"/>
+        <property id="log" value="sl4j"/>
+        <property id="id" value="1000"/>
+    </bean>
+</beans>
